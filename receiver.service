@@ -1,0 +1,12 @@
+[Unit]
+Description=Receiver Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /home/pi/receiver/server.js
+SyslogIdentifier=receiver
+Type=simple
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
